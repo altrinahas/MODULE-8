@@ -1,16 +1,16 @@
-[# # 🔢 Hackerrank:# 🏆 Student Topper Finder
+# #  Hackerrank:#  Student Topper Finder
 
 This Python program helps determine the **top-performing student** based on the total marks across five subjects. It uses a dictionary to store each student’s marks and identifies the topper using simple calculations and built-in functions.
 
 ---
 
-## 🎯 Aim
+##  Aim
 
 To maintain a dictionary of students with their marks in five subjects, calculate their **total marks**, store them in a new dictionary, and identify the **student with the highest total (topper)**.
 
 ---
 
-## 🧠 Algorithm
+##  Algorithm
 
 1. **Start** the program.
 2. Create a dictionary `student_marks`:
@@ -27,29 +27,30 @@ To maintain a dictionary of students with their marks in five subjects, calculat
 
 ---
 
-## 💻 PROGRAM:
-```
-input_str = input()
-marks_dict = eval(input_str)
+##  PROGRAM:
 
-total_marks_dict = {}
+```python
 
-for name, marks in marks_dict.items():
-    total = sum(marks)
-    total_marks_dict[name] = total
+marks = eval(input())
 
-print(total_marks_dict)
+# Calculate total marks
+totals = {name: sum(scores) for name, scores in marks.items()}
 
-topper = max(total_marks_dict, key=total_marks_dict.get)
-top_score = total_marks_dict[topper]
+# Print total marks
+print(totals)
 
-print("Topper is: ",  topper, "with marks = ",  top_score)
+# Find topper
+top_score = max(totals.values())
+for name, total in totals.items():
+    if total == top_score:
+        print(f"Topper is: {name} with marks = {total}")
+
 ```
 
 ## OUTPUT
-![image](https://github.com/user-attachments/assets/af4ce0c0-de73-49be-93d3-c40fdd2b67ed)
+
+![image](https://github.com/user-attachments/assets/ac8606c0-9694-4c4e-82fb-37778d9cc1ce)
 
 ## RESULT
 
-Thus, the output is verified successfully
-](https://github.com/altrinahas/Module-2/tree/main)
+Thus, the program has been executed successfully.
